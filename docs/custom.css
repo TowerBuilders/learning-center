@@ -1,0 +1,18 @@
+body {
+  background-color: #292f36;
+}
+
+.sidebar {
+  background: black;
+  border: none;
+}
+
+body .sidebar .search .input-wrap {
+  border: none;
+}
+
+@media (min-width: 48em) {
+  .sidebar-toggle {
+    top: 0;
+  }
+}
