@@ -5,6 +5,7 @@
 - Smart Contracts
 
   - [Getting Started](smartContract/gettingStarted.md)
+  - [Handling Data](smartContract/handlingData.md)
   - [Deploying](smartContract/deploying.md)
 
 - Client Applications
