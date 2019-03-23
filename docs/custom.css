@@ -10,10 +10,12 @@ body {
   color: white;
 }
 
+.sidebar-nav li.collapse>a[href^="#/"]:not([href*="?id="]):not(:only-child),
 .sidebar-nav li.active>a[href^="#/"]:not([href*="?id="]):only-child {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7' height='11.2' viewBox='0 0 7 11.2'%3E%3Cpath d='M1.5 1.5l4 4.1 -4 4.1' stroke-width='1.5' stroke='rgb%28199, 0, 37%29' fill='none' stroke-linecap='square' stroke-linejoin='miter' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E")
 }
 
+.sidebar-nav li>a[href^="#/"]:not([href*="?id="]):not(:only-child),
 .sidebar-nav li.active>a[href^="#/"]:not([href*="?id="]):not(:only-child) {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11.2' height='7' viewBox='0 0 11.2 7'%3E%3Cpath d='M1.5 1.5l4.1 4 4.1-4' stroke-width='1.5' stroke='rgb%28199, 0, 37%29' fill='none' stroke-linecap='square' stroke-linejoin='miter' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E");
 }
