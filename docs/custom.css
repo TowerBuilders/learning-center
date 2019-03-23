@@ -10,6 +10,7 @@ body {
   color: white;
 }
 
+.cover h1,
 .cover .cover-main>p:last-child a:first-child {
   font-weight: 600;
 }
