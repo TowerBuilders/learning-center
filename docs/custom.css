@@ -2,6 +2,18 @@ body {
   background-color: #292f36;
 }
 
+.cover:before {
+  display: none;
+}
+
+.cover blockquote {
+  color: white;
+}
+
+.cover .cover-main>p:last-child a:first-child {
+  font-weight: 600;
+}
+
 .sidebar {
   background: black;
   border: none;
