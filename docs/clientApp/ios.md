@@ -48,11 +48,43 @@ or
 let wallet: Wallet? = walletFromPrivateKey(privateKey: "<PRIVATE KEY HERE>")
 ```
 
+### Mnemonics
+
+You can also create a wallet as well as 12 word mnemonic phrase to go along with your wallet.
+
+``` swift
+let pair = newWalletMnemonicPair()
+let wallet = pair.0
+let mnemonic = pair.1
+```
+
+You can then recreate the wallet from the mnemonic:
+```
+let w: Wallet? = walletFromMnemonicPhrase(mnemonic: mnemonic.value)
+```
+
+Note: Mnemonics can only be created when first creating a wallet.
+
+### Exporting to a QR
+
+You can create a `QRView` encoding of various wallet keys using the `exportQR` method. It requires the field `key: keyType` and can also take the two fields `frame: CGRect` and `passphrase: String`.
+
+The values of `keyType` are `PrivateKey`, `NEOPrivateKey`, `NEP2`, `WIF`, `Address` and `PublicKey`. If `key` is `.NEP2` then the optional `passphrase` argument to `exportQR` should be used, otherwise it should be ignored.
+
+An example `QRView` created using
+```
+let w = newWallet()
+qrView.generate(code: w.privateKeyString)
+```
+looks like:
+
+![alt text](../assets/clientApp/ios/qr.png "QR View")
+
 ## Using Smart Contracts
 
 Smart contracts can be used in `neovmUtils` in a couple different ways, the simplest being through `ontologyInvoke` and `ontologyInvokeRead`. The first fully invokes the smart contract, while the second does a pre-execution. Both of these functions are used for neovm smart contracts and not native contracts. A neovm contract will be any contract created by a 3rd party developer (including yourself), while a native contract would be something like the ONT or ONG contracts.
 
-### Creating Your Arguments
+### Parameters
 
 Both `ontologyInvoke` and `ontologyInvokeRead` use the [Ontology RPC client](https://github.com/ontio/ontology/blob/master/docs/specifications/rpc_api.md) to communicate with the Ontology blockchain. Specifically, they both call the `sendrawtransaction` (send raw transaction) RPC method. The RPC method requires serialized transaction objects. In order for `neovmUtils` to build these transaction objects, it requires a smart contract hash and a list of arguments. The arguments must be `OntologyParameter` objects.
 
@@ -65,7 +97,7 @@ let addressParam: OntologyParameter = OntologyParameter(type: .Address, value: w
 
 The accepted types are `Address`, `String`, `Fixed8`, `Fixed9`, `Integer` and `Array`. `Fixed8` is for 8 decimal numbers and `Fixed9` is for 9 decimal numbers. `Address` type is for base58 encoded addresses (the format of the `address` field on the `Wallet` class).
 
-### Pre-Executing a Smart Contract
+### Pre-Execution
 
 Pre-execution is used to receive the results of the invocation, without actually completing the invocation. You would use this to read values off a contract (getting the balance on an OEP4 token).
 
@@ -82,7 +114,7 @@ let res = ontologyInvokeRead(contractHash: contractHash, method: method, args: a
 
 In this example, `res` is the hexadecimal response from the pre-execution. Note that these results are in [little-endian](https://en.wikipedia.org/wiki/Endianness).
 
-### Executing a Smart Contract
+### Full Execution
 
 Executing a contract is used to make actual events take place on the blockchain, like transferring an OEP8 asset to another wallet.
 
