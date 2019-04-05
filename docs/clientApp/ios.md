@@ -50,4 +50,53 @@ let wallet: Wallet? = walletFromPrivateKey(privateKey: "<PRIVATE KEY HERE>")
 
 ## Using Smart Contracts
 
-Smart contracts can be used in `neovmUtils` in a couple different ways, the simplest being through `ontologyInvoke` and `ontologyInvokeRead`. The first fully invokes the smart contract, while the second does a pre-execution.
+Smart contracts can be used in `neovmUtils` in a couple different ways, the simplest being through `ontologyInvoke` and `ontologyInvokeRead`. The first fully invokes the smart contract, while the second does a pre-execution. Both of these functions are used for neovm smart contracts and not native contracts. A neovm contract will be any contract created by a 3rd party developer (including yourself), while a native contract would be something like the ONT or ONG contracts.
+
+### Creating Your Arguments
+
+Both `ontologyInvoke` and `ontologyInvokeRead` use the [Ontology RPC client](https://github.com/ontio/ontology/blob/master/docs/specifications/rpc_api.md) to communicate with the Ontology blockchain. Specifically, they both call the `sendrawtransaction` (send raw transaction) RPC method. The RPC method requires serialized transaction objects. In order for `neovmUtils` to build these transaction objects, it requires a smart contract hash and a list of arguments. The arguments must be `OntologyParameter` objects.
+
+`OntologyParameter` objects can be created like this:
+
+``` swift
+let wallet: Wallet = newWallet()
+let addressParam: OntologyParameter = OntologyParameter(type: .Address, value: wallet.address)
+```
+
+### Pre-Executing a Smart Contract
+
+Pre-execution is used to receive the results of the invocation, without actually completing the invocation. You would use this to read values off a contract (getting the balance on an OEP4 token).
+
+The fields that are required are `contractHash`, `method` and `args`.
+
+An example pre-execution can be done like this:
+
+``` swift
+let contractHash: String = "a29564a30043d50620e4c6be61eda834d0acc48b"
+let method: String = "getTotal"
+let args: [OntologyParameter] = []
+let res = ontologyInvokeRead(contractHash: contractHash, method: method, args: args)
+```
+
+In this example, `res` is the hexadecimal response from the pre-execution. Note that these results are in [little-endian](https://en.wikipedia.org/wiki/Endianness).
+
+### Executing a Smart Contract
+
+Executing a contract is used to make actual events take place on the blockchain, like transferring an OEP8 asset to another wallet.
+
+In addition to the `contractHash`, `method` and `args` it requires the fields `gasPrice`, `gasLimit`, `wif` and `payer`. `gasPrice` must be at least 500 and `gasLimit` must be at least 20000 - they are dependent on the complexity of the smart contract you are executing. `wif` is the signer of the transaction and `payer` is the address of the wallet that will pay for the transaction. If you aren't sure what you are doing, then `payer` should be the address of the wallet whose wif you are using.
+
+An example execution can be done like this:
+
+``` swift
+let wallet: Wallet = newWallet()
+let contractHash: String = "c168e0fb1a2bddcd385ad013c2c98358eca5d4dc"
+let method: String = "put"
+let args: [OntologyParameter] = [OntologyParameter(type: .Address, value: wallet.address), OntologyParameter(type: .String, value: "Hello!")]
+let gasPrice: Int = 500
+let gasLimit: Int = 20000
+
+let res = ontologyInvoke(contractHash: contractHash, method: method, args: args, gasPrice: gasPrice, gasLimit: gasLimit, wif: wallet.wif, payer: wallet.address)
+```
+
+In this example, `res` is the transaction hash - or a blank string if it fails.
