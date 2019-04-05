@@ -63,6 +63,8 @@ let wallet: Wallet = newWallet()
 let addressParam: OntologyParameter = OntologyParameter(type: .Address, value: wallet.address)
 ```
 
+The accepted types are `Address`, `String`, `Fixed8`, `Fixed9`, `Integer` and `Array`. `Fixed8` is for 8 decimal numbers and `Fixed9` is for 9 decimal numbers. `Address` type is for base58 encoded addresses (the format of the `address` field on the `Wallet` class).
+
 ### Pre-Executing a Smart Contract
 
 Pre-execution is used to receive the results of the invocation, without actually completing the invocation. You would use this to read values off a contract (getting the balance on an OEP4 token).
