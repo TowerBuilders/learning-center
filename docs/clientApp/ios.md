@@ -134,3 +134,52 @@ let res = ontologyInvoke(contractHash: contractHash, method: method, args: args,
 ```
 
 In this example, `res` is the transaction hash - or a blank string if it fails.
+
+### Native Contracts
+
+In addition to neovm contracts you may want to use the native contracts (ONT, ONG, DID). `neovmUtils` offers a wide range of RPC methods to query balances, transfer assets and use the Ontology DID system.
+
+#### Balances
+
+You can easily query the balances of ONT/ONG with the `ontologyGetBalances` method.
+
+For example:
+
+``` swift
+let address = "<A WALLET ADDRESS>"
+let (ont, ong) = ontologyGetBalances(address: address)
+```
+
+In this example `ont` will be an `Int` and `ong` will be a `Double`.
+
+#### Transfers
+
+You can transfer ONT/ONG with the `ontologyTransfer` method.
+
+For example:
+
+``` swift
+let amount: Double = 10
+let asset: OntAsset = .ONT
+let tx = ontologyTransfer(wif: "<WIF HERE>", asset: OntAsset, toAddress: "<RECIPIENT ADDRESS>", amount: amount)
+```
+
+In this example, `tx` is the transaction hash if it succeeds. `OntAsset` is either `.ONT` or `.ONG`. If it is `.ONT` then the amount must be an integer. It will transfer from the wallet whose `wif` you enter and send it to the address `toAddress`.
+
+#### DID
+
+You can register an Ontid with `sendRegister` and recover the `OntidDescriptionObject` (DDO) with `sendGetDDO`.
+
+### OEP Contracts
+
+There are two different interfaces for OEP contracts, `OEP4Interface` and `OEP8Interface`. They can both be used to query the required fields off of OEP4 and OEP8 contracts. This removes the requirement to use `ontologyInvoke` and `ontologyInvokeRead` when using these types of contracts.
+
+For example with an OEP4:
+
+``` swift
+let oep4 = OEP4Interface(contractHash: "25277b421a58cfc2ef5836767e54eb7abdd31afd")
+print(oep4.getName())           // "LUCKY"
+print(oep4.getSymbol())         // "LCY"
+print(oep4.getDecimals())       // "09"
+print(oep4.getTotalSupply())    // "0000e8890423c78a00"
+```
