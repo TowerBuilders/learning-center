@@ -44,4 +44,4 @@ With each SDK you will be able to send transactions and move assets. Find the fu
 
 In addition, TowerBuilders created a Swift SDK that focuses on usability built off of the Ontology Go Implementation, available [here](../clientApp/ios.md).
 
-Web Apps can connect through the Typescript SDK or through the dAPI created by TowerBuilders [here](../clientApp/web.md)
+Web Apps can connect through the Typescript SDK or through the dAPI created by TowerBuilders [here](../clientApp/web.md).
