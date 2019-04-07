@@ -11,4 +11,4 @@
 - Client Applications
 
   - [Web](clientApp/web.md)
-  - [Mobile](clientApp/mobile.md)
+  - [iOS](clientApp/ios.md)
