@@ -72,3 +72,8 @@ Now switch the selected function to `GetItem`, click "Debug Run" (make sure that
 Lastly, if we switch the function to `DeleteItem`, click "Debug Run" (make sure that the key is still `Hello, world`) and then run `GetItem` again, we'll see:
 
 ![alt text](../assets/smartContracts/handlingData/PrintDelete.png "Print Delete")
+
+### Breakpoints
+
+You can also use breakpoints to debug a smart contract. Simply click to the left of the line and it will appear red. When you run "Debug Run", a hit breakpoint will turn green and non-hit breakpoints will remain red. For example, using our smart contract from above:
+![alt text](../assets/smartContracts/handlingData/Breakpoints.png "Breakpoints")
