@@ -2,7 +2,7 @@
 
 This is an overview of how to get started writing Ontology smart contracts. When creating smart contracts on Ontology, there are a range of options for writing and deploying your code.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/VAg6iX5rRXY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>   
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VAg6iX5rRXY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The Ontology platform has support for executing contract code on the neovm or wasmvm, where neovm contracts can be written in C# or Python, and C++ for wasmvm. In this tutorial, we will start with how to write neovm smart contracts using Python.
 
@@ -69,7 +69,15 @@ The second argument, "args", will be an array of arguments which you would like 
 
 Smart contracts in the Ontology ecosystem are run on the neovm, which accepts a compiled version of your contract code in the form of a serialized bytearray. SmartX handles this compilation for you, and supports two versions of compilers, 1.0 & 2.0.
 
-We will discuss the differences in a future tutorial, so for now, leave it set to compiler 2.0, and click the "Compile" button on the right-hand side.
+Version 1.0 is the original compiler ported from neo-boa, and 2.0 has been enhanced with some additional functionality. We will discuss the differences more in depth in a future tutorial. There is one small update that you need to make in order to make this simple tutorial compatible with compiler 2.0. Just change the import from `boa` to `ontology`, and you are good to go.
+
+```python
+# from boa.interop.System.Runtime import Log
+
+from ontology.interop.System.Runtime import Log
+```
+
+On the righthand side, make sure the compiler is set to 2.0, and click the "Compile" button.
 
 ![alt text](../assets/smartContracts/gettingStarted/compile.png "Compile")
 
