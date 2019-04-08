@@ -84,7 +84,7 @@ There are two more important things you need to understand about using storage i
 
 ### Serialization
 
-First, storage is not able to store objects in their normal form. If you want to store an array or a dictionary you will need to serialize them before putting them into storage and then Deserialize them after retrieving them. Check out this modified version of the previous contract:
+First, storage is not able to store objects in their normal form. If you want to store an array or a dictionary you will need to serialize them before putting them into storage and then deserialize them after retrieving them. Check out this modified version of the previous contract:
 
 ``` python
 from ontology.interop.System.Storage import GetContext, Get, Put, Delete
@@ -124,7 +124,7 @@ def DeleteItem(key):
     return True
 ```
 
-In this example we are using `Serialize` in `PutItem` and `Deserialize` in `GetItem`. Note that we do not attempt to `Deserialize` the value when it is `None`.
+In this example we imported functions from `ontology.interop.System.Runtime` and are using `Serialize` in `PutItem` and `Deserialize` in `GetItem`. Note that we do not attempt to `Deserialize` the value when it is `None`.
 
 ### Input/Output
 
