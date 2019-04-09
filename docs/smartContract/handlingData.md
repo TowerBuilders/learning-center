@@ -4,6 +4,8 @@ This is an overview on handling data in Ontology smart contracts. It will go ove
 
 For this tutorial we will be continuing to use the SmartX IDE, writing in Python. We will be using the version 2.0 Python compiler.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3Js1SNTsQqc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Introducing Storage
 
 All neoVM smart contracts are able to keep track of data stored on the blockchain. This data is siloed off from other contracts and is specific to that contract. It can be written to and read from freely by anyone on the network. It is kept in storage.
