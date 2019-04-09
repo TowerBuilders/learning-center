@@ -19,3 +19,8 @@ The production version of the Ontology blockchain is an open protocol on which a
 ## Setting Up a Private Net
 
 The ontology team has made it extremely simple for anyone to host their own private net by installing a single pre-packaged desktop application. The private net application is called Solo Chain, and it can be run without any environment setup or external dependencies to install. Simply download the Solo Chain application from the official repository on GitHub, and start the application.
+
+Download the latest version of Solo Chain from the link below:
+https://github.com/punicasuite/solo-chain/releases
+
+Upon installation, open the Solo Chain application. You should now be on the `Accounts` tab of the application. Where there will be a single "master" account, which holds all the ONT for the network.
