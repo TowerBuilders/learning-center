@@ -2,6 +2,8 @@
 
 After you have finished writing and fully testing your smart contract in the SmartX web IDE, you are now ready to deploy your smart contract. There are several options available when deploying your smart contract, and each has it's own specific purpose.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jlNAoPMOqso" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Available Networks Overview
 
 ### Private Net
