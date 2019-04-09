@@ -2,7 +2,7 @@
 
 This is an overview of how to get started writing Ontology smart contracts. When creating smart contracts on Ontology, there are a range of options for writing and deploying your code.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/VAg6iX5rRXY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/https://youtu.be/GQzgEtN4y_A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The Ontology platform has support for executing contract code on the neovm or wasmvm, where neovm contracts can be written in C# or Python, and C++ for wasmvm. In this tutorial, we will start with how to write neovm smart contracts using Python.
 
