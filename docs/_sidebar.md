@@ -10,5 +10,4 @@
 
 - Client Applications
 
-  - [Web](clientApp/web.md)
   - [iOS](clientApp/ios.md)
