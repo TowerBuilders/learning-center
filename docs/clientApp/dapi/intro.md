@@ -39,7 +39,7 @@ There are currently two different wallets that provide access to the Ontology dA
 
 For the purposes of these dAPI tutorials we will be using the O3 wallet integration for it's developer tooling, broader platform support, and larger userbase. However, when developing any dApp it will be important to add support for all dAPI enabled wallet providers to reach the maximum amount of possible users.
 
-## dAPI Javascript Packages
+## dAPI JS Packages
 
 In order to interface with the dAPI the dApp developer can needs to include the appropriate Javascript package into their application. O3 provides availability to include the required packages either via CDN or NPM install. Note that O3 runs a plugin style set of packages to support various different blockchains and utility packages, so multiple packages will be required to be installed. For the full suite of available packages, please check out their [guide](https://github.com/O3Labs/o3-dapi).
 
@@ -96,7 +96,7 @@ Upon opening the testbed, you should be presented with the following screen:
 
 From this screen you can see the inputs on the left hand side, and the output area on the right hand side.
 
-## Connecting to the wallet provider
+## Connecting
 
 When you are looking to start a connection with a user, one of the first methods you will need to call is `getAccount`. This function will prompt the user to select one of the accounts in their wallet, and provides the dApp with it's address. Let's first take a look at what this looks like from the UI side.
 
@@ -136,7 +136,7 @@ o3dapi.ONT.getAccount()
 ```
 [Testbed example code](https://github.com/O3Labs/o3-dapi/blob/master/packages/ont/test/main.js#L134)
 
-## Checking account balances
+## Account Balances
 
 Another commonly used method on the dAPI is `getBalance`. This method takes an input of an address, and will return the balance of a specific asset or a list of assets held by that account. Unlike the `getAccount` method, this is considered to be a "read" method, and will not require any permissions from the user to execute.
 
@@ -175,7 +175,7 @@ o3dapi.ONT.asset.getBalance({
 ```
 [Testbed example code](https://github.com/O3Labs/o3-dapi/blob/master/packages/ont/test/main.js#L230)
 
-## Sending assets
+## Sending Assets
 
 If you would like the user to send assets such as ONT or ONG, you can call the `send` method on the dAPI, under the `asset` sub-namespace.
 
