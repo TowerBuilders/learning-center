@@ -1,6 +1,12 @@
 # Running an Ontology Node for Development
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/q_c_TEXtono" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ### First, get the Ontology source code
+
+- You can download the latest Ontology binary file with `curl https://dev.ont.io/ontology_install | sh`.
+
+- You can download other versions [here](https://github.com/ontio/ontology/releases).
 
 Clone the Ontology repository into the appropriate $GOPATH/src/github.com/ontio directory.
 
@@ -25,7 +31,7 @@ Build the source code with make.
 ```
 $ make all
 ```
-After building the source code sucessfully, you should see two executable programs:
+After building the source code successfully, you should see two executable programs:
 - `ontology`: the node program/command line program for node control.
 - `tools/sigsvr`: (optional) Ontology Signature Server - sigsvr is a RPC server for signing transactions for some special requirements. Detailed docs can be found [here](https://github.com/ontio/documentation/blob/master/docs/pages/doc_en/Ontology/sigsvr_en.md).
 
