@@ -8,7 +8,12 @@
   - [Handling Data](smartContract/handlingData.md)
   - [Deploying](smartContract/deploying.md)
   - [Invoking](smartContract/invoking.md)
+  - [Caller Validation](smartContract/callerValidation.md)
 
 - Client Applications
 
   - [iOS](clientApp/ios.md)
+
+- Running a Node
+
+  - [Running a Sync Node](runningNode/runningNode.md)
