@@ -2,6 +2,8 @@
 
 This is an overview on invoking other contracts from your contract. It will cover everything you need to know to get your contract to work with other contracts.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Rol58k4YYcU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 There are two different ways to invoke another contract: `RegisterAppCall` and `DynamicAppCall`
 
 There are no difference in costs between `RegisterAppCall` and `DynamicAppCall` - so it's completely up to you which to use.
