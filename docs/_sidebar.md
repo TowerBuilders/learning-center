@@ -12,6 +12,6 @@
 
   - [iOS](clientApp/ios.md)
 
-- Running Node
+- Running a Node
 
-  - [Running Node](runningNode/runningNode.md)
+  - [Running a Sync Node](runningNode/runningNode.md)
