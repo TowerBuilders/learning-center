@@ -7,6 +7,7 @@
   - [Getting Started](smartContract/gettingStarted.md)
   - [Handling Data](smartContract/handlingData.md)
   - [Deploying](smartContract/deploying.md)
+  - [Invoking](smartContract/invoking.md)
 
 - Client Applications
 
