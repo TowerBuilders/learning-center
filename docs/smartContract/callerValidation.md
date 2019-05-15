@@ -2,6 +2,8 @@
 
 This is an overview on validating the caller in Ontology smart contracts. It will go over all you need to know to validate who the smart contract caller is in a neoVM smart contract.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/m0CJWGxzJ6Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Background
 
 Transactions on the blockchain can be signed by a wallets private key. The private key leaves a publicly verifiable signature stored in the transaction object itself. For reference, you can see how this is done in the `addSign` function in the [Type Script SDK here](https://github.com/ontio/ontology-ts-sdk/blob/7fe82ed595ac28448305d86335aa69f17af3990f/src/transaction/transactionBuilder.ts#L96).
