@@ -4,6 +4,8 @@ This is an overview on invoking other contracts from your contract. It will cove
 
 There are two different ways to invoke another contract: `RegisterAppCall` and `DynamicAppCall`
 
+There are no difference in costs between `RegisterAppCall` and `DynamicAppCall` - so it's completely up to you which to use. However, `DynamicAppCall` is more powerful than `RegisterAppCall` and is the recommended solution.
+
 ## Register App Call
 
 `RegisterAppCall` is used to statically call a contract from your contract. You define the specific contract to interact with, before deploying your contract. Here is an example contract:
