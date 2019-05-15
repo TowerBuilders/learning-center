@@ -12,3 +12,7 @@
 - Client Applications
 
   - [iOS](clientApp/ios.md)
+
+- Running a Node
+
+  - [Running a Sync Node](runningNode/runningNode.md)
