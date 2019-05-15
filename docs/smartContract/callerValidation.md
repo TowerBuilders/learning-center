@@ -18,7 +18,7 @@ The way to validate who the caller is, is with the `CheckWitness` function. It t
 
 You can view the implementation in the [core Go implementation here](https://github.com/ontio/ontology/blob/197c07962366ecc50a67d4909a3250bb134c506f/smartcontract/smart_contract.go#L164).
 
-### Wallet Validation
+## Wallet Validation
 
 Here is an example of using `CheckWitness` to validate that the caller is a specific wallet address.
 
@@ -44,7 +44,7 @@ def private():
 
 In this example we're doing a few things. First declaring the `OWNER` variable to be the address `ALNdxK654mTcMzex9nsfnBXLEfiryhpNUB`. Next, if the `private` function is called, we call `if not CheckWitness(OWNER)`. If the current transaction hasn't been signed by the `OWNER` address, we're going to see the print `'You cannot do that!'` and if it has been, then we'll see `'Only the OWNER sees this'`.
 
-### Contract Validation
+## Contract Validation
 
 You can also check to see if another contract is running your contract. This involves using the two functions `GetCallingScriptHash` and `GetEntryScriptHash`.
 
