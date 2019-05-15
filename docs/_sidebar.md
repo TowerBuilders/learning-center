@@ -12,8 +12,9 @@
 
 - Client Applications
 
-  - [JS dAPI - Intro](clientApp/dapi/intro.md)
   - [iOS](clientApp/ios.md)
+  - [Web dAPI - Intro](clientApp/dapi/intro.md)
+  - [Web dAPI - Smart Contract](clientApp/dapi/smartContractMethods.md)
 
 - Running a Node
 
