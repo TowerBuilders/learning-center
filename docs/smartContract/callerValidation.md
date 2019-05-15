@@ -12,8 +12,11 @@ When the transaction is invoked on the blockchain, the array of signatures can b
 
 The way to validate who the caller is, is with the `CheckWitness` function. It takes one argument, an address, and checks to see if it is either:
 
-1) A wallet that signed the transaction
-2) The contract calling the function (I will talk about this below)
+  **1)** A wallet that signed the transaction
+
+  **2)** The contract calling the function (I will talk about this below)
+
+You can view the implementation in the [core Go implementation here](https://github.com/ontio/ontology/blob/197c07962366ecc50a67d4909a3250bb134c506f/smartcontract/smart_contract.go#L164).
 
 ### Wallet Validation
 
