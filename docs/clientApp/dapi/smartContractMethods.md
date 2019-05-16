@@ -24,7 +24,7 @@ In this example we took a random token contract and a random address to test the
 
 It's also important to note that even after converting the number from a hex string, the number looks very large. This is because smart contracts only deal with whole number, and you will need to further transform the value on the client side by calling the `decimals` method on this same OEP4 contract. Try to call the `decimals` method on the same contract on your own to calculate the total.
 
-In order to call this method, we can find it in the `ONT` sub-namespace `sc`. Since it is a read method, we do not need the users permission to get a result back from this method.
+In order to call this method, we can find it in the `ONT` sub-namespace `sc`. Since it is a read method, we do not need the users permission to get a result back from this method.  One of the most important things when starting to interact with your smart contract with either `invokeRead` or `invoke`, is how to properly format your imput arguments. Make sure to use the appropriate `type` for each argument.
 
 ```typescript
 o3dapi.ONT.sc.invokeRead({
