@@ -1,5 +1,8 @@
 # dAPI Smart Contract Methods
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Ne0RyOiXlOY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 One of the most commonly used operations required by a dApp are to be able to interact with smart contracts on the blockchain. These interactions can be condensed into two basic methods, one for reading the output of a invoking a smart contract without writing the results to the chain, and the other for actually having the transaction included in a block on chain to update state.
 
 ## Read Invoke
