@@ -104,7 +104,7 @@ When you are looking to start a connection with a user, one of the first methods
 
 Upon clicking the `Get account` button, the website will call the `getAccount` function from dAPI, and the wallet provider will prompt the user in a notification that your dApp would like to connect, and they they should select an account. Once selecting an account from the dropdown list and clicking the `Connect` button, the wallet provider will return the users address to your dApp. This way the dApp can start to fetch information relevant to this users account. The response should look like this.
 
-![alt text](../../assets/clientApp/dapi/intro/getAccountReturn.18.05 PM.png "dapi getAccountReturn")
+![alt text](../../assets/clientApp/dapi/intro/getAccountReturn.png "dapi getAccountReturn")
 
 Now that we understand what calling `getAccount` from your dApp will look like from the users perspective, let's take a look at how to add this code to your application.
 
