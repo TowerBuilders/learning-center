@@ -26,6 +26,7 @@ Here is an example of using `CheckWitness` to validate that the caller is a spec
 
 ``` python
 from ontology.interop.System.Runtime import Log, CheckWitness
+from ontology.interop.Ontology.Runtime import Base58ToAddress
 
 OWNER = Base58ToAddress('ALNdxK654mTcMzex9nsfnBXLEfiryhpNUB')
 
