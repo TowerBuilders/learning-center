@@ -178,14 +178,20 @@ You can register an Ontid with `sendRegister` and recover the `OntidDescriptionO
 
 ### OEP Contracts
 
-There are two different interfaces for OEP contracts, `OEP4Interface` and `OEP8Interface`. They can both be used to query the required fields off of OEP4 and OEP8 contracts. This removes the requirement to use `ontologyInvoke` and `ontologyInvokeRead` when using these types of contracts.
+There are three different interfaces for OEP contracts, `OEP4Interface`, `OEP5Interface` and `OEP8Interface`. They can be used to query and invoke the required fields of OEP4/5/8 contracts. This removes the requirement to use `ontologyInvoke` and `ontologyInvokeRead` when using these types of contracts.
 
 For example with an OEP4:
 
 ``` swift
-let oep4 = OEP4Interface(contractHash: "25277b421a58cfc2ef5836767e54eb7abdd31afd")
-print(oep4.getName())           // "LUCKY"
-print(oep4.getSymbol())         // "LCY"
-print(oep4.getDecimals())       // "09"
-print(oep4.getTotalSupply())    // "0000e8890423c78a00"
+let oep4 = OEP4Interface(contractHash: "78b98deed62aa708eaf6de85843734ecdfb14c1b", endpoint: mainNet)
+let address = "ATrApQ3w4xLnc2yDkEDXw1zAk9Ue544Csz"
+let decimals = Double(oep4.getDecimals())
+let rawSupply = oep4.getTotalSupply()
+let actual = Int(Double(rawSupply) / pow(10, decimals))
+
+print(oep4.getName())                     // "SEED"
+print(oep4.getSymbol())                   // "SEED"
+print(decimals)                           // 6
+print(actual)                             // 100000000000
+print(oep4.getBalance(address: address))  // 0
 ```
