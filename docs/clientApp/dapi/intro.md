@@ -24,7 +24,7 @@ There are currently two different wallets that provide access to the Ontology dA
   - [Download link](https://chrome.google.com/webstore/detail/cyano-wallet/dkdedlpgdmmkkfjabffeganieamfklkm?hl=en)
 - Android developer app
   - Installable on Android via APK
-  - Demonstrates functionality of the use of dAPI OEP interface for developer testing
+  - Demonstrates functionality of the use of dAPI OEP interface for developer testing for mobile web
   - [Download link](http://101.132.193.149/files/app-debug.apk)
 
 #### O3 Desktop
