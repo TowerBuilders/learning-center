@@ -14,17 +14,20 @@ Here is a high level overview of the flow of interactions between the user, your
 
 There are currently two different wallets that provide access to the Ontology dAPI, they are the Cyano wallet and the O3 Desktop wallet. Both of these wallets have separately implemented the [standard interface](https://github.com/ontio/OEPs/pull/8), but each have their own set of fundamental differences. Let's first briefly introduce each wallet provider, and list a few things unique to each provider.
 
-#### Cyano Wallet
+#### Cyano
 
 - Chrome extension
-- Simple and minimalistic interface
-- Feature light wallet
-- Secures user private keys in chrome extension storage
-- Interface with websites running in Chrome browser
+  - Simple and minimalistic interface
+  - Feature light wallet
+  - Secures user private keys in chrome extension storage
+  - Interface with websites running in Chrome browser
+  - [Download link](https://chrome.google.com/webstore/detail/cyano-wallet/dkdedlpgdmmkkfjabffeganieamfklkm?hl=en)
+- Android developer app
+  - Installable on Android via APK
+  - Demonstrates functionality of the use of dAPI OEP interface for developer testing
+  - [Download link](http://101.132.193.149/files/app-debug.apk)
 
-[Download link](https://chrome.google.com/webstore/detail/cyano-wallet/dkdedlpgdmmkkfjabffeganieamfklkm?hl=en)
-
-#### O3 Desktop Wallet
+#### O3 Desktop
 
 - Desktop application (Windows, OSX, Linux)
 - Clean interface with dark mode
